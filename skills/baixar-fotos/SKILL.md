@@ -17,14 +17,20 @@ Não use foto genérica de outro lugar, rua sem o atrativo, selfie, cardápio, p
 Procure nesta ordem, parando no primeiro arquivo que o Travely conseguir baixar:
 
 1. O jpg, png, webp ou gif no site do lugar: hotel, parque, praia, prefeitura ou secretaria de turismo. O endereço é o do arquivo, não o da página.
-2. A mesma foto salva no navegador, quando o site recusar o download automático. Mande o arquivo em data URI ou base64. Não repita o link que falhou.
-3. Wikimedia Commons e Google Imagens servem para achar a foto. O link deles não entra no roteiro. O Commons recusa o download do servidor. A miniatura do Google é pequena e o endereço muda. Abra a foto no navegador, salve o arquivo e envie os bytes.
+2. A mesma foto salva no navegador, quando o site recusar o download automático. Não repita o link que falhou. Não leia a imagem para a conversa.
+3. Wikimedia Commons e Google Imagens servem para achar a foto. O link deles não entra no roteiro. O Commons recusa o download do servidor. A miniatura do Google é pequena e o endereço muda. Abra a foto no navegador e salve o arquivo.
 
 Pexels e Unsplash não substituem a praia da cidade nem a fachada do parque.
 
 ## Gravar
 
-`colocar_foto` recebe `imagem` como URL http(s), data URI ou base64.
+Siga o tamanho ideal e o mecanismo descritos em `colocar_foto`. A conversa leva só um texto curto.
+
+- Endereço http(s) do arquivo: passe em `imagem`.
+- Arquivo no disco deste servidor: passe o caminho em `imagem`.
+- Arquivo em outra máquina: `POST /mcp/foto` com a mesma chave, campo `arquivo`, e passe o `id` da resposta em `imagem`.
+
+Não mande data URI nem base64.
 
 - Capa: `roteiro_id` e o slot `foto`, `foto_2` ou `foto_3`. Até três lugares diferentes. A primeira é a principal.
 - Peça ou seção: `peca_id`. Passeio, ingresso, aéreo, traslado, hospedagem e importante levam foto. Nota não leva.
