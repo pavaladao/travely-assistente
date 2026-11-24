@@ -13,7 +13,11 @@ Leia `perfil.md` na raiz. Sem arquivo, ou com `nome` vazio, pare e siga configur
 
 O preço é vitrine. Não vira comissão e não entra no faturamento.
 
-Obrigatório na criação: título. O resto é o que a pessoa já souber: clientes (um nome por linha), origem, destino, saída, volta, noites, preço, `preco_por` (`pessoa`, `casal`, `familia`, `grupo`), parcelas, texto de pagamento, operadora em texto, carta, inclui, não inclui.
+Obrigatório na criação: título. O resto da pasta é o que a pessoa já souber: clientes (um nome por linha), origem, destino, saída, volta, noites, preço de vitrine e `preco_por` (`pessoa`, `casal`, `familia`, `grupo`).
+
+Carta, inclui, não inclui e pagamento não entram em `salvar_proposta`. São seções do documento. `obter_proposta` devolve `documento_id`. `ler_roteiro` com esse id mostra cada seção. `forma_secao` devolve os campos daquele tipo. `editar_peca` grava `peca_id` e `campos`. No pagamento, a forma também traz preço, preço por, parcelas, operadora, `clientes_nomes` e o texto. O preço continua vitrine e não entra no balanço.
+
+Na correção da pasta, `proposta_id` e o campo que muda. O título atual permanece se não for enviado.
 
 A operadora da proposta é texto. Não é o fornecedor da venda. A carta é o texto da pessoa. Não escreva uma carta que ela não pediu.
 
